@@ -1,25 +1,25 @@
 import java.math.BigInteger
 
 fun main() {
-    var b = true
-    while (b) {
+    var proverka = true
+    while (proverka) {
         println("Введите число:")
-        var n = readLine()!!.toLong()
-        if (n < 0) {
-            while (n < 0) {
+        var number = readLine()!!.toLong()
+        if (number < 0) {
+            while (number < 0) {
                 println("Введите число, которое больше нуля")
-                n = readLine()!!.toLong()
-                b = false
+                number = readLine()!!.toLong()
+                proverka = false
             }
         }
-        if (n >0){
-            println("\nFibonacci '$n': ")
-            println( fibonacci(BigInteger.ZERO, BigInteger.ONE, BigInteger.valueOf(n)))
-            b = false
+        if (number >0){
+            println("\nFibonacci '$number': ")
+            println( fibonacci(BigInteger.ZERO, BigInteger.ONE, BigInteger.valueOf(number)))
+            proverka = false
         }
     }
 }
-tailrec fun fibonacci(a: BigInteger, b: BigInteger, n: BigInteger): BigInteger {
+tailrec fun fibonacci(a: BigInteger, b: BigInteger, number: BigInteger): BigInteger {
     println("$a, ")
-    return if (n == BigInteger.ZERO) a else fibonacci(b, a + b, n - BigInteger.ONE)
+    return if (number == BigInteger.ZERO) a else fibonacci(b, a + b, number - BigInteger.ONE)
 }
